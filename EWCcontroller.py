@@ -17,7 +17,7 @@ import os
 import time
 from Quartz.CoreGraphics import CGEventCreateKeyboardEvent
 #Mouse
-from Quartz.CoreGraphics import CGEventCreateMouseEvent, kCGEventMouseMoved, kCGMouseButtonLeft, kCGMouseButtonRight, kCGEventLeftMouseDown, kCGEventLeftMouseUp, kCGEventRightMouseUp, kCGEventRightMouseDown, CGEventGetLocation, CGPointMake
+from Quartz.CoreGraphics import CGEventCreateMouseEvent, kCGEventMouseMoved, kCGMouseButtonLeft, kCGMouseButtonRight, kCGEventLeftMouseDown, kCGEventLeftMouseUp, kCGEventRightMouseUp, kCGEventRightMouseDown, CGEventGetLocation, CGPointMake,CGWarpMouseCursorPosition, CGAssociateMouseAndMouseCursorPosition
 
 from Quartz.CoreGraphics import CGEventCreate
 from Quartz.CoreGraphics import CGEventPost
@@ -82,13 +82,16 @@ class Controller:
 		return point
 
 	def moveMouseTo(self, x, y):
-		return CGEventPost(
-			kCGHIDEventTap, 
-			CGEventCreateMouseEvent(
-				None, kCGEventMouseMoved,
-				CGPointMake(x, y),
-				kCGMouseButtonLeft)
-			);
+		CGWarpMouseCursorPosition(CGPointMake(x,y));
+		CGAssociateMouseAndMouseCursorPosition(1);
+
+		# return CGEventPost(
+		# 	kCGHIDEventTap, 
+		# 	CGEventCreateMouseEvent(
+		# 		None, kCGEventMouseMoved,
+		# 		CGPointMake(x, y),
+		# 		kCGMouseButtonLeft)
+		# 	);
 
 	def mouseMove(self, k, k2 = None):
 		cursor = self.getCursorPosition()
@@ -249,16 +252,16 @@ class Controller:
 
 			if(self.mouse):
 				if received_string[UANALOG_INDEX] == '1' and received_string[RANALOG_INDEX] == '1':
-					#print "UP + RIGHT"
+					print "UP + RIGHT"
 					self.mouseMove(K_I, K_H)
 				elif received_string[DANALOG_INDEX] == '1' and received_string[RANALOG_INDEX] == '1':
-					#print "DOWN + RIGHT"
+					print "DOWN + RIGHT"
 					self.mouseMove(K_J, K_H)
 				elif received_string[UANALOG_INDEX] == '1' and received_string[LANALOG_INDEX] == '1':
-					#print "UP + LEFT"
+					print "UP + LEFT"
 					self.mouseMove(K_J, K_G)
 				elif received_string[DANALOG_INDEX] == '1' and received_string[LANALOG_INDEX] == '1':
-					#print "DOWN + LEFT"
+					print "DOWN + LEFT"
 					self.mouseMove(K_I, K_G)
 
 			#L-Trigger
