@@ -1,10 +1,12 @@
-# PSPEWC ![](https://github.com/jacquesCedric/PSPEWC-mac/blob/master/icon_32x32.png?raw=true)
+# PSPEWC ![](https://github.com/Britskiy/PSPEWC-mac/blob/master/icon_32x32.png?raw=true)
 
-![](https://github.com/jacquesCedric/PSPEWC-mac/blob/master/pspewc_screen.png?raw=true)  
+![](https://github.com/Britskiy/PSPEWC-mac/blob/master/pspewc_screen.png?raw=true)  
 A macOS application that allows you to use your PSP as a wireless controller.
 
+## Original: 
+[jacquesCedric/PSPEWC-mac](https://github.com/jacquesCedric/PSPEWC-mac)
 ## How to Setup
-1. Download the app from the Releases page ([Releases page](https://github.com/jacquesCedric/PSPEWC-mac/releases)) or, optionally, compile from source (see below)
+1. Download the app from the Releases page ([Releases page](https://github.com/Britskiy/PSPEWC-mac/releases)) or, optionally, compile from source (see below)
 2. Unzip
 4. Run the MAC/PSPEWC.app on your computer. This is the server
 5. Put the PSP/GAME/PSPEasyWirelessController folder inside your GAME folder on your PSP
@@ -24,4 +26,4 @@ When connected the PSP emulates keyboard button presses. So long as your game ha
 All software written by myself is public domain.
 This release is a heavily adapted version of [PSP Easy Wireless Controller](https://github.com/atphalix/PSP-Easy-Wireless-Controller) for Windows.
 
-Built on macOS 10.11.4 for versions 10.9+
+Built on macOS 10.13.5 for versions 10.9+
